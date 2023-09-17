@@ -61,32 +61,67 @@
           <h5 class="mb-4">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
           
           <div class="">
-            <input type="text" id="formControlLg" class="form-control form-control-lg" />
-            <label class="form-label" for="formControlLg">Recherche ...</label>
+            <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
+            <label class="form-label" for="inputSearch">Recherche ...</label>
           </div>
-          <a
+          <button (click)="searchBySubject()"
             class="btn btn-light btn-lg m-2"
             href="#"
             role="button"
             rel="nofollow"
             target="_blank"
-          >Recherche par sujet</a
-          >
-          <a
+          >Recherche par sujet</button>
+          <button
             class="btn btn-light btn-lg m-2"
             href="#"
             target="_blank"
             role="button"
-          >Recherche par auteur</a
-          >
+          >Recherche par auteur</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Background image -->
 </header>
-<main class="btn">
+
+<main>
   <span>{{ title }} app is running!</span>
+
+
+  <div class="row" *ngFor="let book of searchResult?.books">
+    <div class="col-1"></div>
+    <div class="col-10">
+
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img style="max-width: 540px;"
+              src="https://covers.openlibrary.org/b/id/{{book.cover}}-M.jpg" alt="{{book.title}}"
+              class="img-fluid rounded-start"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="card-title">{{ book.title }}</h4>
+              <p>{{book.authorName}}</p> 
+              <br>
+              <p>published : {{book.firstPublishYear}}</p>
+              
+              <p class="card-text">
+                {{ book.description }}
+              </p>
+              <p class="card-text d-inline"  *ngFor="let tags of book.subjects">
+                <button class="btn badge rounded-pill badge-info m-1">#{{tags}}    
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-1"></div>
+  </div>
 </main>
 
   <!-- Footer -->
