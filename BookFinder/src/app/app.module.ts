@@ -4,10 +4,16 @@ import { HttpClient, HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { BooksListComponent } from './books-list/books-list.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BooksListComponent,
+    BookDetailsComponent,
+    AuthorDetailsComponent
   ],
   imports: [
     BrowserModule,
