@@ -1,6 +1,6 @@
 import { Book } from "./Book";
 
-export class Subject{
+export class SubjectBook{
 
     constructor(
         public name ?: string,

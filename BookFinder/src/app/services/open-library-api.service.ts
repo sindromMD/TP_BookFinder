@@ -1,7 +1,7 @@
 import { Injectable, resolveForwardRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { Subject } from 'src/models/Subject';
+import { SubjectBook } from 'src/models/SubjectBook';
 import { Book } from 'src/models/Book';
 
 const baseURL = `https://openlibrary.org`
@@ -11,7 +11,7 @@ const baseURL = `https://openlibrary.org`
 })
 export class OpenLibraryAPIService {
 
-  listBooksBySubject: Subject = new Subject();
+  listBooksBySubject: SubjectBook = new SubjectBook();
 
   constructor( public http: HttpClient  ) { }
   
@@ -19,7 +19,7 @@ export class OpenLibraryAPIService {
   async getBySubject(pSubject:string):Promise<any>{
     let result = await lastValueFrom(this.http.get<any>(`${baseURL}/search.json?q=subject%3A${pSubject}&mode=everything&sort=rating&language=fre`))
     console.log(result);
-    this.listBooksBySubject = new Subject();
+    this.listBooksBySubject = new SubjectBook();
     this.listBooksBySubject.name = pSubject;
     this.listBooksBySubject.workCount = result.numFound; // nombre d'œuvres
 
@@ -38,7 +38,7 @@ export class OpenLibraryAPIService {
       this.getBooksInfo(key,publishDate, authorName);
       
     });
-    // console.log(this.listBooksBySubject)
+    console.log(this.listBooksBySubject)
     return this.listBooksBySubject
   }
 
@@ -62,3 +62,6 @@ export class OpenLibraryAPIService {
     this.listBooksBySubject.books.push(newBook)
   }
 }
+
+
+

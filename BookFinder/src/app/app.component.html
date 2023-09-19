@@ -3,13 +3,13 @@
   <style>
     /* Default height for small devices */
     #intro-example {
-      height: 400px;
+      height: 300px;
     }
 
     /* Height for devices larger than 992px */
     @media (min-width: 992px) {
       #intro-example {
-        height: 600px;
+        height: 878px;
       }
     }
   </style>
@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['books-by-subject',inputSearch]" >Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Favoris</a>
@@ -54,17 +54,19 @@
     class="p-5 text-center bg-image"
     style="background-image: url('https://i.etsystatic.com/28878645/r/il/ed68b4/3214706509/il_fullxfull.3214706509_mfdc.jpg');"
   >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Rechercher le livre</h1>
-          <h5 class="mb-4">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
+          <h1 class="mb-3 ">Rechercher le livre</h1><br>
+          <h5 class="mb-4 ">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
           
           <div class="">
             <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
             <label class="form-label" for="inputSearch">Recherche ...</label>
           </div>
-          <button (click)="searchBySubject()"
+          <!-- (click)="searchBySubject()" -->
+          <!-- [routerLink]="['books-by-subject',inputSearch]" -->
+          <button  [routerLink]="['books-by-subject',inputSearch]"
             class="btn btn-light btn-lg m-2"
             href="#"
             role="button"
@@ -83,47 +85,11 @@
   </div>
   <!-- Background image -->
 </header>
-
 <main>
-  <span>{{ title }} app is running!</span>
+  
+  <router-outlet></router-outlet>
 
-
-  <div class="row" *ngFor="let book of searchResult?.books">
-    <div class="col-1"></div>
-    <div class="col-10">
-
-      <div class="card mb-3" >
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img style="max-width: 540px;"
-              src="https://covers.openlibrary.org/b/id/{{book.cover}}-M.jpg" alt="{{book.title}}"
-              class="img-fluid rounded-start"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">{{ book.title }}</h4>
-              <p>{{book.authorName}}</p> 
-              <br>
-              <p>published : {{book.firstPublishYear}}</p>
-              
-              <p class="card-text">
-                {{ book.description }}
-              </p>
-              <p class="card-text d-inline"  *ngFor="let tags of book.subjects">
-                <button class="btn badge rounded-pill badge-info m-1">#{{tags}}    
-                </button>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-1"></div>
-  </div>
 </main>
-
   <!-- Footer -->
 <footer>
 </footer>
