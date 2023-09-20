@@ -1,1 +1,94 @@
-<p>book-details works!</p>
+<p>book-details works! {{searchResult.title}}</p>
+<main>
+  
+    <!-- <p class="bg-info">This is a book-list component</p> -->
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+  
+          <div class="card my-5" >
+            <div class="row g-0">
+              <!-- *ngIf="book.cover" -->
+              <div class="col-12 col-md-4 col-lg-4 text-center my-3" > 
+                <img 
+                  src="https://covers.openlibrary.org/b/id/{{searchResult.cover}}-M.jpg" alt="{{searchResult.title}}"
+                  class="img-fluid rounded-start mb-3"
+                />
+                <br>
+                <div>
+                    <button class="btn btn-info">Ajouter aux favoris</button>
+                </div>
+              </div>
+              <div class="col-12 col-md-8 col-lg-8">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-10">
+                      <h4 class="card-title">{{ searchResult.title }}</h4>
+                  <p>{{searchResult.subtitle}}</p> 
+                  <p class="p1">Par : {{searchResult.authorName}}</p>
+                    </div>
+                    <!-- <div class="col-2">
+                      <button class="btn btn-info">partager</button>
+                    </div> -->
+                  </div>
+                  <div class="row pb-4">
+                    <div class="col-12 p2">
+                        <p class="card-text">
+                            {{ searchResult.description }}
+                          </p>
+                    </div>
+                  </div>
+                  <div class="row pb-4">
+                    <div class="col-12 p1">
+                        <p class="card-text">
+                            {{ searchResult.nbPages }} pages
+                          </p>
+                    </div>
+                  </div>
+                  <div class="row pb-4">
+                    <div class="col-8 p1">
+                        <p class="card-text">
+                            This edition 
+                        </p>
+                        
+                        <table class="table-sm  text-nowrap">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Publié :</th>
+                                <td>{{searchResult.publishDate}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Publié par :</th>
+                                <td><span *ngFor="let publisher of searchResult.publishers">{{publisher}}</span></td>
+                              </tr>
+                                 <tr>
+                                <th scope="row">Format :</th>
+                                <td>{{searchResult.nbPages}} pages</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">ISBN</th>
+                                <td>{{searchResult.isbn13}}</td>
+                              </tr>
+                           
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                        <p class="card-text d-inline"  *ngFor="let tags of searchResult.subjects">
+                            <a class="p4 btn py-1 px-2 badge rounded-pill badge-info m-1" [routerLink]="['/books-by-subject/', tags]">
+                                #{{tags}}    
+                            </a>
+                          </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </main>

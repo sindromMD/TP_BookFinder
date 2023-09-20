@@ -1,0 +1,10 @@
+/* P4 Montserrat 10 */
+.p4{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    text-transform: lowercase; 
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000000;
+}

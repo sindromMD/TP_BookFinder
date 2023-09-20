@@ -3,13 +3,13 @@
   <style>
     /* Default height for small devices */
     #intro-example {
-      height: 400px;
+      height: 300px;
     }
 
     /* Height for devices larger than 992px */
     @media (min-width: 992px) {
       #intro-example {
-        height: 600px;
+        height: 878px;
       }
     }
   </style>
@@ -54,41 +54,42 @@
     class="p-5 text-center bg-image"
     style="background-image: url('https://i.etsystatic.com/28878645/r/il/ed68b4/3214706509/il_fullxfull.3214706509_mfdc.jpg');"
   >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Rechercher le livre</h1>
-          <h5 class="mb-4">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
+          <h1 class="mb-3 ">Rechercher le livre</h1><br>
+          <h5 class="mb-4 ">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
           
           <div class="">
-            <input type="text" id="formControlLg" class="form-control form-control-lg" />
-            <label class="form-label" for="formControlLg">Recherche ...</label>
+            <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
+            <label class="form-label" for="inputSearch">Recherche ...</label>
           </div>
-          <a
+          <!-- (click)="searchBySubject()" -->
+          <!-- [routerLink]="['books-by-subject',inputSearch]" -->
+          <button  [routerLink]="['books-by-subject',inputSearch]"
             class="btn btn-light btn-lg m-2"
             href="#"
             role="button"
             rel="nofollow"
             target="_blank"
-          >Recherche par sujet</a
-          >
-          <a
+          >Recherche par sujet</button>
+          <button
             class="btn btn-light btn-lg m-2"
             href="#"
             target="_blank"
             role="button"
-          >Recherche par auteur</a
-          >
+          >Recherche par auteur</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Background image -->
 </header>
-<main class="btn">
-  <span>{{ title }} app is running!</span>
-</main>
+<main>
+  
+  <router-outlet></router-outlet>
 
+</main>
   <!-- Footer -->
 <footer>
 </footer>
