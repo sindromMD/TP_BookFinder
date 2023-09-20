@@ -24,8 +24,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "books-by-subject/:subject", component : BooksListComponent},
-      {path: "books-by-subject", component : BooksListComponent},
-      {path: "book-details/:key", component : BookDetailsComponent}
+      // {path: "books-by-subject", component : BooksListComponent},
+      {path: "book-details/:keyWork", component : BookDetailsComponent}
 
     ])
   ],

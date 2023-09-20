@@ -9,31 +9,37 @@
         <div class="card mt-3" >
           <div class="row g-0">
             <!-- *ngIf="book.cover" -->
-            <div class="col text-center my-3" > 
-              <img  style="max-width: 540px;"
+            <div class="col-12 col-md-4 col-lg-4 text-center my-3" > 
+              <img  
                 src="https://covers.openlibrary.org/b/id/{{book.cover}}-M.jpg" alt="{{book.title}}"
                 class="img-fluid rounded-start"
               />
             </div>
-            <div class="col-12-sm col-md-10">
+            <div class="col-12 col-md-8 col-lg-8">
               <div class="card-body">
                 <div class="row">
                   <div class="col-10">
-                    <h4 class="card-title">{{ book.title }}</h4>
-                <p>{{book.authorName}}</p> 
-                <p>published : {{book.firstPublishYear}}</p>
+                    <a class="card-title" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
+                <p>Author : {{book.authorName}}</p> 
+                <p>Published : {{book.firstPublishYear}}</p>
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-info">Details</button>
+                    <button class="btn btn-info" [routerLink]="['/book-details/', book.key]">Details</button>
                   </div>
                 </div>
-                <p class="card-text">
-                  {{ book.description }}
-                </p>
-                <p class="card-text d-inline"  *ngFor="let tags of book.subjects">
-                  <button class="btn badge rounded-pill badge-info m-1">#{{tags}}    
-                  </button>
-                </p>
+                <div class="row">
+                  <div class="col-12">
+                    <p>{{ book.description | slice:0:180 }}
+                      <span *ngIf="book.description != undefined && book.description.length > 180">
+                        <a [routerLink]="['/book-details/', book.key]">Lire plus...</a>
+                      </span></p>
+                  <div class="card-text d-inline"  *ngFor="let tags of book.subjects | slice:0:10 ">
+                    <button class="btn badge rounded-pill badge-info m-1" [routerLink]="['/books-by-subject/', tags]">
+                      #{{tags}}    
+                    </button>
+                  </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
