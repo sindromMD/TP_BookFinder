@@ -90,15 +90,14 @@ export class OpenLibraryAPIService {
     console.log(result)
     let newAuthor = new Author(
       pkey,
-      result.name && result.name.length > 0 ? result.name[0]: '', 
+      Array.isArray(result.name) && result.name.length > 0 ? result.name[0] : result.name,
       (result.bio && result.bio.value) ? result.bio.value : (result.bio ? result.bio : 'Cet auteur n\'a pas encore de biographie'),
-      // result.bio ? result.bio : 'Cet auteur n\'a pas encore de biographie',
       result.birth_date ? result.birth_date : undefined,
       result.photos && result.photos.length > 0 ? result.photos[0] : undefined,
     );
     return newAuthor;
   }
-
+// qui renvoie la liste des œuvres et contributions de l'auteur à partir des paramètres
   async getAutorsWorks(pkey: string): Promise<SubjectBook> {
     let result= await lastValueFrom(this.http.get<any>(`${baseURL}${pkey}/works.json?limit=30`));
     console.log(result);
