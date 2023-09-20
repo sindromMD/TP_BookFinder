@@ -11,7 +11,7 @@
               <!-- *ngIf="book.cover" -->
               <div class="col-12 col-md-4 col-lg-4 text-center my-3" > 
                 <img 
-                  src="https://covers.openlibrary.org/b/id/{{searchResult.cover}}-M.jpg" alt="{{searchResult.title}}"
+                [src]="searchResult.cover ? 'https://covers.openlibrary.org/b/id/' + searchResult.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" alt="{{searchResult.title}}"
                   class="img-fluid rounded-start mb-3"
                 />
                 <br>
@@ -25,7 +25,7 @@
                     <div class="col-10">
                       <h4 class="card-title">{{ searchResult.title }}</h4>
                   <p>{{searchResult.subtitle}}</p> 
-                  <p class="p1">Par : {{searchResult.authorName}}</p>
+                  <p class="p1">Par : <a [routerLink]="['/author-details/', searchResult.authorKey]">{{searchResult.authorName}}</a> </p>
                     </div>
                     <!-- <div class="col-2">
                       <button class="btn btn-info">partager</button>

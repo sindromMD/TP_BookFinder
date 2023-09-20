@@ -1,1 +1,39 @@
-<p>author-details works!</p>
+<div class="team-boxed">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Détails de l'auteur </h2>
+            <p class="text-center"></p>
+        </div>
+        <div class="row people">
+            <!-- <div class="col-md-6 col-lg-4 item">
+            
+            </div> -->
+            <div class="col-md-12 col-lg-12 item card">
+                <div class="box">
+                    <img class="rounded img-fluid" 
+                    [src]="searchResult.photo ? 'https://covers.openlibrary.org/a/id/' + searchResult.photo + '-M.jpg' : 'assets/image/genericPhotoAuthor.jpg'">
+                    <h3 class="name">{{searchResult.name}}</h3>
+                    <p class="title">Auteur</p>
+                    <p class="description">{{searchResult.biography}}</p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    
+                    <div>
+                        <h2> Livres connexes (écrits / contribué) </h2>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-5 g-4">
+                        <div class="col text-center" *ngFor="let book of searchResultBooks?.books">
+                          <div>
+                            <img [src]="book.cover ? 'https://covers.openlibrary.org/b/id/' + book.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" class="rounded-right img-fluid p-2" alt="{{book.title}}">
+                          </div>
+                            <div class="card-body">
+                              <p class="card-title"><a class="card-title" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a></p>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+</div>

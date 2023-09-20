@@ -1,6 +1,6 @@
 /*Importation de polices externes :googleFonts*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
-
+/* 
 .col,
 .col-1,
 .col-2,
@@ -76,7 +76,7 @@
 
 .row {
   border: 1px solid rgb(39, 255, 93);
-}
+} */
 /*----------------Style de police-------------*/
  /* H0 Montserrat 48*/
  .h0 {
@@ -177,6 +177,6 @@ h4 {
 /* You can add global styles to this file, and also import other style files */
 body {
 
-    background-color: rgb(224, 210, 175);
+    background-color: rgb(221, 205, 172);
   
 }

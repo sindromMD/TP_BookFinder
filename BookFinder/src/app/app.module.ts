@@ -25,7 +25,9 @@ import { RouterModule } from '@angular/router';
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "books-by-subject/:subject", component : BooksListComponent},
       // {path: "books-by-subject", component : BooksListComponent},
-      {path: "book-details/:keyWork", component : BookDetailsComponent}
+      {path: "book-details/:keyWork", component : BookDetailsComponent},
+      {path: "author-details/:keyAuthor", component : AuthorDetailsComponent}
+
 
     ])
   ],

@@ -9,18 +9,17 @@
         <div class="card mt-3" >
           <div class="row g-0">
             <!-- *ngIf="book.cover" -->
-            <div class="col-12 col-md-4 col-lg-4 text-center my-3" > 
-              <img  
-                src="https://covers.openlibrary.org/b/id/{{book.cover}}-M.jpg" alt="{{book.title}}"
-                class="img-fluid rounded-start"
-              />
+            <div class="col-12 col-md-4 col-lg-4 text-center my-3"> 
+                <img [src]="book.cover ? 'https://covers.openlibrary.org/b/id/' + book.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" 
+                  alt="{{book.title}}"
+                  class="img-fluid rounded-start"/>
             </div>
             <div class="col-12 col-md-8 col-lg-8">
               <div class="card-body">
                 <div class="row">
                   <div class="col-10">
                     <a class="card-title" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
-                <p>Author : {{book.authorName}}</p> 
+                <p>Author : <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
                 <p>Published : {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
