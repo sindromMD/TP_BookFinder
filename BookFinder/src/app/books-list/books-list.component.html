@@ -21,7 +21,7 @@
                   <div class="col-10">
                     <a class="card-title" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
                 <p>Author : {{book.authorName}}</p> 
-                <p>Published : {{book.firstPublishYear}}</p>
+                <p>Published : {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
                     <button class="btn btn-info" [routerLink]="['/book-details/', book.key]">Details</button>

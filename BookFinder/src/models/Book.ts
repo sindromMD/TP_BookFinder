@@ -12,9 +12,11 @@ export class Book{
         public authorKey ?: string,
         public authorName ?: string,
         public subjects ?: string[],
-        public firstPublishYear ?: string
-        // public publishDate ?: string,
-     
+        public publishDate ?: string,
+        public nbPages ?:string,
+        public publishers ?: string[],
+        public subtitle ?: string,
+        public isbn13 ?: string
 
     ){}
 }
