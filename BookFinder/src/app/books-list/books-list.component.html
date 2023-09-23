@@ -1,6 +1,12 @@
 
-<main>
-  
+
+  <div style="height: 150px;">
+    
+  </div>
+  <div class="row text-center ">
+    <h2 class="h2">Résultats de la recherche pour le sujet : </h2>
+      <h1>{{searchResult.name}}</h1>
+  </div>
   <!-- <p class="bg-info">This is a book-list component</p> -->
     <div class="row" *ngFor="let book of searchResult?.books">
       <div class="col-2"></div>
@@ -12,24 +18,24 @@
             <div class="col-12 col-md-4 col-lg-4 text-center my-3"> 
                 <img [src]="book.cover ? 'https://covers.openlibrary.org/b/id/' + book.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" 
                   alt="{{book.title}}"
-                  class="img-fluid rounded-start"/>
+                  class="img-fluid shadowStyle rounded-start"/>
             </div>
             <div class="col-12 col-md-8 col-lg-8">
               <div class="card-body">
                 <div class="row">
                   <div class="col-10">
-                    <a class="card-title" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
-                <p>Author : <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
-                <p>Published : {{book.publishDate}}</p>
+                    <a class="card-title h4" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
+                <p class="">Author : <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
+                <p class="">Published : {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-info" [routerLink]="['/book-details/', book.key]">Details</button>
+                    <button class="btn btn-info pBTN" [routerLink]="['/book-details/', book.key]">Details</button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <p>{{ book.description | slice:0:180 }}
-                      <span *ngIf="book.description != undefined && book.description.length > 180">
+                    <p class="p1">{{ book.description | slice:0:170 }}
+                      <span *ngIf="book.description != undefined && book.description.length > 170">
                         <a [routerLink]="['/book-details/', book.key]">Lire plus...</a>
                       </span></p>
                   <div class="card-text d-inline"  *ngFor="let tags of book.subjects | slice:0:10 ">
@@ -47,4 +53,3 @@
       </div>
       <div class="col-"></div>
     </div>
-  </main>

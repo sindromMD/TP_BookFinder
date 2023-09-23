@@ -1,7 +1,8 @@
-<p>book-details works! {{searchResult.title}}</p>
-<main>
   
     <!-- <p class="bg-info">This is a book-list component</p> -->
+    <div class="marginTop">
+
+    </div>
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
@@ -12,18 +13,18 @@
               <div class="col-12 col-md-4 col-lg-4 text-center my-3" > 
                 <img 
                 [src]="searchResult.cover ? 'https://covers.openlibrary.org/b/id/' + searchResult.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" alt="{{searchResult.title}}"
-                  class="img-fluid rounded-start mb-3"
+                  class="img-fluid shadowStyle rounded-start mb-3 mt-5"
                 />
                 <br>
                 <div>
-                    <button class="btn btn-info">Ajouter aux favoris</button>
+                    <!-- <button class="btn btn-info" (click)="saveBookToBookShelves(searchResult)">Ajouter aux favoris</button> -->
                 </div>
               </div>
               <div class="col-12 col-md-8 col-lg-8">
-                <div class="card-body">
+                <div class="card-body m-3">
                   <div class="row">
                     <div class="col-10">
-                      <h4 class="card-title">{{ searchResult.title }}</h4>
+                      <h4 class="card-title h2">{{ searchResult.title }}</h4>
                   <p>{{searchResult.subtitle}}</p> 
                   <p class="p1">Par : <a [routerLink]="['/author-details/', searchResult.authorKey]">{{searchResult.authorName}}</a> </p>
                     </div>
@@ -33,21 +34,22 @@
                   </div>
                   <div class="row pb-4">
                     <div class="col-12 p2">
-                        <p class="card-text">
+                        <p class="p1 card-text">
                             {{ searchResult.description }}
                           </p>
                     </div>
                   </div>
                   <div class="row pb-4">
                     <div class="col-12 p1">
-                        <p class="card-text">
+                        <p class="p2 card-text">
                             {{ searchResult.nbPages }} pages
                           </p>
                     </div>
                   </div>
+                  <hr>
                   <div class="row pb-4">
                     <div class="col-8 p1">
-                        <p class="card-text">
+                        <p class="p1 card-text ">
                             This edition 
                         </p>
                         
@@ -91,4 +93,3 @@
         </div>
         <div class="col-2"></div>
       </div>
-    </main>

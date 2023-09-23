@@ -1,91 +1,50 @@
 <header>
-  <!-- Intro settings -->
-  <style>
-    /* Default height for small devices */
-    #intro-example {
-        height: 300px;
-      }
-  
-      /* Height for devices larger than 992px */
-      @media (min-width: 992px) {
-        #intro-example {
-          height: 878px;
-        }
-      }
-  </style>
-
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Favoris</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar -->
-
-  <!-- Background image -->
-  <div
-    id="intro-example"
-    class="p-5 text-center bg-image"
-    style="background-image: url('https://i.etsystatic.com/28878645/r/il/ed68b4/3214706509/il_fullxfull.3214706509_mfdc.jpg');"
-  >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-          <h1 class="mb-3 ">Rechercher le livre</h1><br>
-          <h5 class="mb-4 ">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
-          
-          <div class="">
-            <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
-            <label class="form-label" for="inputSearch">Recherche ...</label>
-          </div>
-          <!-- (click)="searchBySubject()" -->
-          <!-- [routerLink]="['books-by-subject',inputSearch]" -->
-          <button  [routerLink]="['books-by-subject',inputSearch]"
-            class="btn btn-light btn-lg m-2"
-            href="#"
-            role="button"
-            rel="nofollow"
-            target="_blank"
-          >Recherche par sujet</button>
-          <button
-            class="btn btn-light btn-lg m-2"
-            href="#"
-            target="_blank"
-            role="button"
-          >Recherche par auteur</button>
+  <nav class=" row  navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 d-none d-sm-block">
+        <div class="">
+         <a href="/home" > <img class=" logoSize img-fluid" src="assets\image\LogoHeader.png" alt=""></a>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Background image -->
+      <div class="col-sm-8 col-md-6 col-lg-6 col-xl-8">    
+      
+        <button
+          class="navbar-toggler "
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbar01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+          <div class="collapse navbar-collapse " id="navbar01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="active">
+                <a class="h4 btn-menu" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="h4 btn-menu" href="#">Favoris</a>
+              </li>
+              <li class="nav-item">
+                <a class="h4 btn-menu" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+      
+      </div>
+      <div class="col-md-2 col-lg-3 col-xl-2 d-none d-md-block">
+        <div class="d6">
+            <input type="search" (keydown.enter)="onKeyDownEvent($event)" id="inputSearch" placeholder="Rechercher ici..." [(ngModel)]="inputSearch">
+            <button ></button>
+          </div>
+      </div> 
+
+  </nav>
+  <!-- Navbar -->
 </header>
-<main>
+<main >
   
   <router-outlet></router-outlet>
 

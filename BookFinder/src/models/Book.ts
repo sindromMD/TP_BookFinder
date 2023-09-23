@@ -13,7 +13,7 @@ export class Book{
         public authorName ?: string,
         public subjects ?: string[],
         public publishDate ?: string,
-        public nbPages ?:string,
+        public nbPages ?: string,
         public publishers ?: string[],
         public subtitle ?: string,
         public isbn13 ?: string
