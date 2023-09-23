@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,8 +11,11 @@ export class AppComponent implements OnInit{
   title = 'BookFinder';
   inputSearch: string = '';
 
-  constructor(public route: ActivatedRoute){}
+  constructor(private router: Router, public route: ActivatedRoute){}
 
+  onKeyDownEvent(event: any) {
+    this.router.navigate(['/books-by-subject', this.inputSearch], { relativeTo: this.route });
+  }
    ngOnInit(): void {  
    }
 }

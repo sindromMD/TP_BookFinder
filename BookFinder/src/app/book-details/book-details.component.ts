@@ -21,7 +21,7 @@ export class BookDetailsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.route.params.subscribe(async (params: Params) => {
       this.workKey = params['keyWork'];
-      console.log(this.workKey);
+      // console.log(this.workKey);
       // On appelle le service pour mettre à jour les résultats en fonction du nouveau paramètre
       this.searchResult = await this.openLibraryApiService.getBooksInfo(this.workKey);
     });

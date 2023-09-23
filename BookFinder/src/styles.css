@@ -1,5 +1,6 @@
 /*Importation de polices externes :googleFonts*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 .col,
 .col-1,
@@ -91,7 +92,7 @@
 
  /* H1 Montserrat 36*/
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 900;
     font-size: 36px;
@@ -101,7 +102,7 @@ h1 {
 
  /* H2 Montserrat 34*/
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -111,7 +112,7 @@ h2 {
 
  /* H3 Montserrat 22*/
 h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
@@ -121,7 +122,7 @@ h3 {
 
 /* H2 Montserrat 20*/
 h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -133,18 +134,18 @@ h4 {
 
 /* P1 Montserrat 16 */
 .p1, .paginate_button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 22px;
     color: #4F4F4F;
     text-decoration: none;
 }
 
 /* P2 Montserrat 14 */
 .p2{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -154,7 +155,7 @@ h4 {
 
 /* P3 Montserrat 12 */
 .p3{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -164,7 +165,7 @@ h4 {
 
 /* P4 Montserrat 10 */
 .p4{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     font-style: normal;
     font-weight: 300;
     font-size: 10px;
@@ -177,6 +178,97 @@ h4 {
 /* You can add global styles to this file, and also import other style files */
 body {
 
-    background-color: rgb(224, 210, 175);
+    background-color: rgb(221, 205, 172);
   
 }
+
+.shadowStyle {
+    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+.shadowStyle:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+.btn-menu{
+    gap: 10px;
+    align-items: flex-start;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    color:#3a394b;
+    background-color:transparent
+}
+.btn-menu:hover{
+    padding-bottom:6px;
+    color: #898585;
+    background: 
+    linear-gradient(
+      to left, 
+      rgba(255, 201, 32, 0) 0%, #c5452e 49.48%, rgba(255, 201, 32, 0) 100%
+    )
+    bottom 
+    left
+    no-repeat; 
+    background-size:100% 3px ;
+}
+.btn-menu:active{
+    padding-bottom:6px;
+    color: rgb(51, 155, 65);
+    background: 
+    linear-gradient(
+      to left, 
+      rgba(255, 201, 32, 0) 0%, #c5452e 49.48%, rgba(255, 201, 32, 0) 100%
+    )
+    bottom 
+    left
+    no-repeat; 
+    background-size:100% 3px ;
+}
+.d6 {background: #B46381;}
+.d6 form {
+  height: 70px;
+}
+.d6 input {
+  height: 100%;
+  width: 0;
+  padding: 0 100px 0 15px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  background: transparent;
+  transition: .4s cubic-bezier(0, 0.8, 0, 1);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  cursor: pointer;
+}
+.d6 input:focus {
+  width: 300px;
+  z-index: 1;
+  border-bottom: 0px solid #F9F0DA;
+  
+}
+.d6 button {
+  background: #c5452e;
+  border: none;
+  border-radius: 5px;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  cursor: pointer;
+}
+.d6 button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 30px;
+  color: #F9F0DA;
+  
+}
+
+
+

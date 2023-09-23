@@ -1,0 +1,21 @@
+.pBTN{
+    font-family: 'Montserrat', sans-serif;
+    font-style: bold;
+    text-transform: uppercase; 
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    color: #ffffff;
+}
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    text-transform:capitalize; 
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    color: #242222;
+}
+header{
+    margin-bottom :100px;
+}

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { SubjectBook } from 'src/models/SubjectBook';
 import { Book } from 'src/models/Book';
+import { Author } from 'src/models/Author';
 
 const baseURL = `https://openlibrary.org`
 
@@ -17,8 +18,8 @@ export class OpenLibraryAPIService {
   
 // méthode qui forme une liste de livres en fonction du sujet recherché
   async getBySubject(pSubject:string):Promise<any>{
-    let result = await lastValueFrom(this.http.get<any>(`${baseURL}/search.json?q=subject%3A${pSubject}&mode=everything&sort=rating&language=fre`))
-    console.log(result);
+    let result = await lastValueFrom(this.http.get<any>(`${baseURL}/search.json?q=subject%3A${pSubject}&mode=everything&sort=rating&language=fre&limit=10`));
+    console.log('1)getBySubject result',result);
     this.listBooksBySubject = new SubjectBook();
     this.listBooksBySubject.name = pSubject;
     this.listBooksBySubject.workCount = result.numFound; // nombre d'œuvres
@@ -31,34 +32,34 @@ export class OpenLibraryAPIService {
 
       //on récupère certaines propriétés qui sont absentes des détails du livre
       let key = item.key;
-      let authorName = item.author_name; 
       // let publishDate = item.first_publish_year || '';
 
       // on cherche les détails du livre
-      let book = await this.getBooksInfo(key, authorName);
-      this.listBooksBySubject.books.push(book)
+      let book = await this.getBooksInfo(key);
+      this.listBooksBySubject.books.push(book);
     });
-    console.log(this.listBooksBySubject)
-    return this.listBooksBySubject
+    console.log('my_listSuject',this.listBooksBySubject);
+    return this.listBooksBySubject;
   }
 
 //méthode qui récupère certains détails du livre.
-  async getBooksInfo(pKey:string, pAuthorName ?:string):Promise<Book>{
-    let result = await lastValueFrom(this.http.get<any>(`${baseURL}${pKey}.json`))
-    // console.log(result);
+  async getBooksInfo(pKey:string):Promise<Book>{
+    let result = await lastValueFrom(this.http.get<any>(`${baseURL}${pKey}.json`));
+    // console.log('2)getBooksInfo_result',result);
     
     //Créer l'objet Book, avec les éléments recherchés, et vérifier qu'ils ne sont pas nuls.
     let moreInfo = await this.getMoreDetailsEdition(pKey);
+    let authorKey = result.authors ? result.authors[0]?.author?.key : undefined;
+    let authorInfo = authorKey ? await this.getAuthorInfo(authorKey) : { name: 'n/a' };
     let newBook = new Book(
     result.key,
-    result.title || '',
+    result.title || 'n/a',
     result.covers && result.covers.length > 0 ? result.covers[0] : undefined,
     result.description?.value || 'Ce livre n\'a pas encore de description.',
     result.authors && result.authors.length > 0 && result.authors[0].author.key
       ? result.authors[0].author.key
       : undefined,
-       // ajouter seulement 10 étiquettes à la liste
-    pAuthorName && pAuthorName.length > 0 ? pAuthorName[0] : undefined,
+    authorInfo.name,
     result.subjects ? result.subjects.map((item:any) => item) : undefined,
     moreInfo.publishDate,
     moreInfo.nbPages,
@@ -66,25 +67,64 @@ export class OpenLibraryAPIService {
     moreInfo.subtitle,
     moreInfo.isbn13
     );
-    console.log(newBook);
+    // console.log('my_newBook',newBook);
    return newBook;
   }
 
+// la méthode comporte des informations supplémentaires qui n'ont pas été trouvées dans les demandes précédentes
   async getMoreDetailsEdition(pkey:string):Promise<any>{
-    let result = await lastValueFrom(this.http.get<any>(`${baseURL}${pkey}/editions.json`))
-    console.log(result)
+    let result = await lastValueFrom(this.http.get<any>(`${baseURL}${pkey}/editions.json`));
+    // console.log('2.1)getMoreDetailsEdition_result',result);
     let moreInfo = {
 
-      publishDate: result.entries[0].publish_date || '',
-      nbPages: result.entries[0].number_of_pages || '0',
+      publishDate: result.entries[0].publish_date ? result.entries[0].publish_date : 'n/a',
+      nbPages: result.entries[0].number_of_pages ? result.entries[0].number_of_pages : 'n/a',
       publishers: result.entries[0].publishers ? result.entries[0].publishers.map((item:any)=>item) : [],
-      subtitle: result.entries[0].subtitle || '',
-      isbn13: result.entries[0].isbn_13 ? result.entries[0].isbn_13[0] : ''
+      subtitle: result.entries[0].subtitle ? result.entries[0].subtitle : '',
+      isbn13: result.entries[0].isbn_13 ? result.entries[0].isbn_13[0] : 'n/a'
     };
+    // console.log('2.2)moreInfo_each',moreInfo);
     return moreInfo;
+  }
+// renvoie des données sur un auteur
+  async getAuthorInfo(pkey:string):Promise<any>{
+    let result = await lastValueFrom(this.http.get<any>(`${baseURL}${pkey}.json`));
+    // console.log('2.3)getAuthorInfo_result',result);
+    let newAuthor = new Author(
+      pkey,
+      Array.isArray(result.name) && result.name.length > 0 ? result.name[0] : result.name,
+      (result.bio && result.bio.value) ? result.bio.value : (result.bio ? result.bio : 'Cet auteur n\'a pas encore de biographie'),
+      result.birth_date ? result.birth_date : undefined,
+      result.photos && result.photos.length > 0 ? result.photos[0] : undefined,
+    );
+    // console.log('2.4)authorInfo' , newAuthor);
+    return newAuthor;
+  }
+// qui renvoie la liste des œuvres et contributions de l'auteur à partir des paramètres
+  async getAutorsWorks(pkey: string): Promise<SubjectBook> {
+    let result= await lastValueFrom(this.http.get<any>(`${baseURL}${pkey}/works.json?limit=30`));
+    console.log(result);
+    this.listBooksBySubject = new SubjectBook();
+      result.entries.forEach((item:any) => {
+        let book = new Book(
+          item.key,
+          item.title,
+          item.covers && item.covers.length > 0 ? item.covers[0] : '',
+          item.description && item.description.value ? item.description.value : 'N/A',
+          pkey,
+          '',
+          item.subjects ? item.subjects.map((subject: any) => subject) : [],
+          );
+          this.listBooksBySubject.books.push(book);
+      });
+      // console.log(this.listBooksBySubject);
+      return this.listBooksBySubject;
+
   }
 }
 //https://openlibrary.org/works/OL45804W/editions.json
+//https://openlibrary.org/authors/OL23919A.json
+//https://openlibrary.org/authors/OL1394244A/works.json?limit=15
 
 
 

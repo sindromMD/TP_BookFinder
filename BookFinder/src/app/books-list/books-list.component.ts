@@ -27,7 +27,7 @@ export class BooksListComponent implements OnInit {
     // on récupère la valeur du paramètre et on suit en plus cet élément
     this.route.params.subscribe(async (params: Params) => {
       this.subject = params['subject'];
-      console.log(this.subject);
+      // console.log(this.subject);
       // On appelle le service pour mettre à jour les résultats en fonction du nouveau paramètre
       this.searchResult = await this.openLibraryApiService.getBySubject(this.subject);
     });
