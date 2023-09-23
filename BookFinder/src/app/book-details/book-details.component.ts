@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { OpenLibraryAPIService } from '../services/open-library-api.service';
 import { Book } from 'src/models/Book';
+import { FavorisStorageService } from '../services/favoris-storage.service';
 
 @Component({
   selector: 'app-book-details',
@@ -15,7 +16,8 @@ export class BookDetailsComponent implements OnInit {
 
     constructor(
       public route : ActivatedRoute,
-      private openLibraryApiService : OpenLibraryAPIService
+      private openLibraryApiService : OpenLibraryAPIService,
+      private favorisStorageService : FavorisStorageService
     ){}
 
   async ngOnInit(): Promise<void> {
@@ -26,4 +28,8 @@ export class BookDetailsComponent implements OnInit {
       this.searchResult = await this.openLibraryApiService.getBooksInfo(this.workKey);
     });
   }
+  async addToFavorites():Promise<void>{
+    await this.favorisStorageService.saveBookToBookShelves(this.searchResult)
+  }
+  
 }
