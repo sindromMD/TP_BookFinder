@@ -9,6 +9,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     BooksListComponent,
     BookDetailsComponent,
     AuthorDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    FavoriteBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -26,12 +28,10 @@ import { HomeComponent } from './home/home.component';
     RouterModule.forRoot([
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "home", component: HomeComponent},
+      {path: "favorite-books", component : FavoriteBooksComponent},
       {path: "books-by-subject/:subject", component : BooksListComponent},
-      // {path: "books-by-subject", component : BooksListComponent},
       {path: "book-details/:keyWork", component : BookDetailsComponent},
       {path: "author-details/:keyAuthor", component : AuthorDetailsComponent}
-
-
     ])
   ],
   providers: [],

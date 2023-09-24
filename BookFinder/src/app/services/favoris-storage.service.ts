@@ -11,7 +11,7 @@ export class FavorisStorageService {
   favoritesList : Book[]= []
   constructor(public http: HttpClient) { }
 
-  async saveBookToBookShelves(pBook:any){
+  async saveBookToBookShelves(pBook:Book){
     this.jsonData = localStorage.getItem("favoris");
     if(this.jsonData !=null){
       this.favoritesList = JSON.parse(this.jsonData);
@@ -39,4 +39,23 @@ export class FavorisStorageService {
     }
     
   } 
+
+  async deleteBookFromBookShelves(pBook:Book):Promise<void>{
+      this.jsonData = localStorage.getItem("favoris");
+
+    if (this.jsonData != null) {
+      this.favoritesList = JSON.parse(this.jsonData);
+
+    // Recherche de l'index de l'objet dans la liste 
+    let index = this.favoritesList.findIndex((book: Book) => book.key === pBook.key);
+
+      if (index !== -1) {
+        // Supprimer l'objet de la liste
+        this.favoritesList.splice(index, 1); //(index = position de départ , 1 = a supprimé un élément)
+
+        // Mise à jour de la liste dans localStorage
+        localStorage.setItem("favoris", JSON.stringify(this.favoritesList));
+      }
+    }
+  }
 }

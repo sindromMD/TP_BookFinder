@@ -16,9 +16,11 @@
           <div class="row g-0">
             <!-- *ngIf="book.cover" -->
             <div class="col-12 col-md-4 col-lg-4 text-center my-3"> 
-                <img [src]="book.cover ? 'https://covers.openlibrary.org/b/id/' + book.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" 
+                <a [routerLink]="['/book-details/', book.key]">
+                  <img [src]="book.cover ? 'https://covers.openlibrary.org/b/id/' + book.cover + '-M.jpg' : 'assets/image/genericCoverBook.jpg'" 
                   alt="{{book.title}}"
                   class="img-fluid shadowStyle rounded-start"/>
+                </a>
             </div>
             <div class="col-12 col-md-8 col-lg-8">
               <div class="card-body">
