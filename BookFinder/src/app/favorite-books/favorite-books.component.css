@@ -1,0 +1,57 @@
+
+.marginTop{
+    margin-top: 140px;
+}
+.divider-1{
+    background: linear-gradient(90deg,#c5452e 0%,rgba(242,242,242,0) 100% );
+    margin-right: 0px;
+    width: auto;
+    height: 2px; 
+    position: relative; 
+}
+caption{
+    caption-side: top;
+    text-align: end;
+        font-family: 'Libre Baskerville', serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #4F4F4F;
+        text-decoration: none;
+    
+}
+
+thead {
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ece8a4;
+    text-decoration: none;
+}
+.th_special{
+    width: 300px;
+}
+.p1 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(216, 230, 90);
+}
+a:hover{
+    color: #898585;
+   
+}
+a:active{
+    color: #FFC920;
+}

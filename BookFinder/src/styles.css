@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.col,
+/* .col,
 .col-1,
 .col-2,
 .col-3,
@@ -77,7 +77,7 @@
 
 .row {
   border: 1px solid rgb(39, 255, 93);
-}
+} */
 /*----------------Style de police-------------*/
  /* H0 Montserrat 48*/
  .h0 {
@@ -87,7 +87,7 @@
     font-size: 48px;
     line-height: 48px;
     letter-spacing: 0.02em;
-    color: #000000;
+    color: #ffffff;
 }
 
  /* H1 Montserrat 36*/
@@ -97,7 +97,7 @@ h1 {
     font-weight: 900;
     font-size: 36px;
     line-height: 44px;
-    color: #ffffff;
+    color: #424141;
 }
 
  /* H2 Montserrat 34*/
@@ -178,7 +178,7 @@ h4 {
 /* You can add global styles to this file, and also import other style files */
 body {
 
-    background-color: rgb(221, 205, 172);
+    background-color: rgb(231 217 189);
   
 }
 
@@ -255,8 +255,8 @@ body {
   background: #c5452e;
   border: none;
   border-radius: 5px;
-  height: 80px;
-  width: 80px;
+  height: 76px;
+  width: 76px;
   position: absolute;
   top: 2px;
   right: 10px;
@@ -270,5 +270,16 @@ body {
   
 }
 
+a {
+  text-decoration: none;
+  color: rgb(39, 101, 172);
+}
+a:hover{
+  color: #898585;
+ 
+}
+a:active{
+  color: #c5452e;
+}
 
 
