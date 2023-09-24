@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { OpenLibraryAPIService } from '../services/open-library-api.service';
 import { Book } from 'src/models/Book';
 import { FavorisStorageService } from '../services/favoris-storage.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-book-details',

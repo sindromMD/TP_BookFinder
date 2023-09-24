@@ -10,6 +10,8 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,13 @@ import { FavoriteBooksComponent } from './favorite-books/favorite-books.componen
     FormsModule,
     HttpClientModule,
     RouterModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     RouterModule.forRoot([
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "home", component: HomeComponent},
@@ -38,3 +47,7 @@ import { FavoriteBooksComponent } from './favorite-books/favorite-books.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
