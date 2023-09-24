@@ -25,7 +25,7 @@
           <h5 class="mb-4 " translate>home.sub_title</h5>
           
           <div class="m-3">
-            <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
+            <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch" (keydown)="onKeyDown($event)"/>
           </div>
           <!-- (click)="searchBySubject()" -->
           <!-- [routerLink]="['books-by-subject',inputSearch]" -->

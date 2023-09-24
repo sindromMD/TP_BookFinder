@@ -181,6 +181,9 @@ body {
     background-color: rgb(231 217 189);
   
 }
+footer{
+  margin-top: 100px;
+}
 
 .shadowStyle {
     transition: box-shadow 0.3s ease-in-out;
