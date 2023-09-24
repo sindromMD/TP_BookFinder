@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FavorisStorageService } from '../services/favoris-storage.service';
 import { Book } from 'src/models/Book';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-favorite-books',

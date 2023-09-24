@@ -13,12 +13,12 @@
                     <img class="rounded img-fluid" 
                     [src]="searchResult.photo ? 'https://covers.openlibrary.org/a/id/' + searchResult.photo + '-M.jpg' : 'assets/image/genericPhotoAuthor.jpg'">
                     <h3 class="name">{{searchResult.name}}</h3>
-                    <p class="title">Auteur</p>
+                    <p class="title" translate> author-details.author</p>
                     <p class="description">{{searchResult.biography}}</p>
                     <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
                     
                     <div>
-                        <h2> Livres connexes (écrits / contribué) </h2>
+                        <h2 translate> author-details.title_related </h2>
                     </div>
                     <div class="row row-cols-1 row-cols-md-5 g-4">
                         <div class="col text-center" *ngFor="let book of searchResultBooks?.books">

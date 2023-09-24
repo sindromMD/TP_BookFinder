@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { OpenLibraryAPIService } from '../services/open-library-api.service';
 import { SubjectBook } from 'src/models/SubjectBook';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-books-list',
