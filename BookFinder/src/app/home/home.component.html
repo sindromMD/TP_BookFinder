@@ -21,8 +21,8 @@
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3 h0">Rechercher le livre</h1><br>
-          <h5 class="mb-4 ">Rencontrez votre livre préféré et gérez votre vie de lecteur.</h5>
+          <h1 class="mb-3 h0" translate>home.title</h1><br>
+          <h5 class="mb-4 " translate>home.sub_title</h5>
           
           <div class="m-3">
             <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch"/>
@@ -31,11 +31,9 @@
           <!-- [routerLink]="['books-by-subject',inputSearch]" -->
           <button  [routerLink]="['/books-by-subject',inputSearch]"
             class="btn btn-light btn-lg m-2"
-            href="#"
             role="button"
             rel="nofollow"
-            target="_blank"
-          >Recherche par sujet</button>
+            target="_blank" translate>home.button_search</button>
           <!-- <button
             class="btn btn-light btn-lg m-2"
             href="#"

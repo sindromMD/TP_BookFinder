@@ -1,7 +1,7 @@
 <div class="row justify-content-around  mb-3  marginTop">
     <div class="col col-xl-10 marge_top_titre_favoris " id="favoris">
-       <h1>
-                  VOS LIVRES PRÉFÉRÉS
+       <h1 translate>
+        favorite-books.title
        </h1>
         <div class="divider-1 mb-3 "></div>
     </div>
@@ -11,14 +11,14 @@
         <div class="table-responsive-sm">
             <table class="table table-dark table-striped align-middle text-center" >
                 <caption class=""><i class="fa-solid fa-circle-info fa-flip " style="color: #c5452e;"></i> 
-                    Vous avez  <span class="h4 mx-2">{{counter}}</span>  livres dans votre liste de favoris !
+                    {{ 'favorite-books.caption_table_1' | translate }}  <span class="h4 mx-2">{{counter}}</span>  {{ 'favorite-books.caption_table_2' | translate }}
                 </caption>
                     <thead class="h4">
                       <tr >
-                          <th>Image</th>
-                          <th class="th_special">Titre</th>
-                          <th class="th_special">L'auteur</th>
-                          <th>Description</th>
+                          <th translate>favorite-books.th_image</th>
+                          <th class="th_special" translate>favorite-books.th_title</th>
+                          <th class="th_special" translate>favorite-books.th_author</th>
+                          <th translate>favorite-books.th_description</th>
                           <th><!--btn retirer--></th>
                       </tr>
                     </thead>
@@ -44,8 +44,8 @@
                                    </td>
                                    <td>
                                       <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-danger" (click)="deletefromFavoris(book)" >
-                                            Retirer
+                                        <button translate type="button" class="btn btn-danger" (click)="deletefromFavoris(book)" >
+                                            favorite-books.button_delete
                                             </button>
                                    </td>
                                 </tr>                     

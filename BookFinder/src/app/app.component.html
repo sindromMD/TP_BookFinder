@@ -22,15 +22,15 @@
           <div class="collapse navbar-collapse " id="navbar01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="active">
-                <a class="h4 btn-menu" aria-current="page" [routerLink]="['home']">Home</a>
+                <a class="h4 btn-menu" aria-current="page" [routerLink]="['home']" translate>app.button_home</a>
               </li>
               <li class="nav-item">
-                <a class="h4 btn-menu" [routerLink]="['favorite-books']">Favoris</a>
+                <a class="h4 btn-menu" [routerLink]="['favorite-books']" translate>app.button_favoris</a>
               </li>
               <li class="nav-item">
                 <a class="h4 btn-menu" href="#">About</a>
               </li>
-              <button class="btn btn-dark buttonLang" translate (click)="changeLanguage()">app.button_lang</button>
+              <button class="btn btn-dark buttonLang" translate (click)="changeLanguage()">app.button_lang <i class="fa-solid fa-language fa-bounce fa-2xl ms-2" style="color: #dbd41f;"></i></button>
             </ul>
           </div>
       
@@ -50,8 +50,42 @@
   <router-outlet></router-outlet>
 
 </main>
-  <!-- Footer -->
-<footer>
-</footer>
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
 
+      <!-- Linkedin -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.linkedin.com/in/alexei-culaxiz/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://github.com/sindromMD"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Projet réalisé par:
+    <br>
+    <a class="text-dark" href="https://github.com/sindromMD">Culaxiz Alexei</a>
+   
+    <p>© 2023 Cégep Édouard-Montpetit</p>
+  </div>
+
+  <!-- Copyright -->
+</footer>
 

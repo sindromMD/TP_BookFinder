@@ -1,0 +1,51 @@
+{
+    "app": {
+      "button_home":"Accueil",
+      "button_favoris":"Favoris",
+      "button_lang":"English",
+      "button_search":"Rechercher un livre ... "
+    },
+
+    "home": {
+        "title":"Rechercher le livre",
+        "sub_title":"Rencontrez votre livre préféré et gérez votre vie de lecteur.",
+        "button_search":"Recherche par sujet"
+      },
+
+    "favorite-books": {
+        "title":"VOS LIVRES PRÉFÉRÉS",
+        "caption_table_1":"Vous avez ",
+        "caption_table_2":" livres dans votre liste de favoris !",
+        "button_delete":"Retirer",
+        "th_image":"Image",
+        "th_title":"Titre",
+        "th_author":"L'auteur",
+        "th_description":"Description"
+
+      },
+
+      "books-list": {
+        "title":"Résultats de la recherche pour le sujet :",
+        "published_date":"Date de publication :",
+        "button_details":"Détails",
+        "author":"Par :",
+        "read_more" : "Lire plus..."
+
+      },
+
+      "book-details": {
+        "author":"Par : ",
+        "pages" : "pages",
+        "title_edition":"Cette édition",
+        "published_date":"Date de publication : ",
+        "published_by" : "Publié par : ",
+        "format" : "Format : ",
+        "button_favorits":"Ajouter aux favoris"     
+      },
+      
+      "author-details": {
+        "author":"Auteur",
+        "title_related":"Livres connexes (écrits / contribué)"
+        
+      }
+  }

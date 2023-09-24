@@ -4,7 +4,7 @@
     
   </div>
   <div class="row text-center ">
-    <h2 class="h2">Résultats de la recherche pour le sujet : </h2>
+    <h2 class="h2" translate >books-list.title</h2>
       <h1>{{searchResult.name}}</h1>
   </div>
   <!-- <p class="bg-info">This is a book-list component</p> -->
@@ -27,18 +27,18 @@
                 <div class="row">
                   <div class="col-10">
                     <a class="card-title h4" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
-                <p class="">Author : <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
-                <p class="">Published : {{book.publishDate}}</p>
+                <p class="" translate > books-list.author <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
+                <p class=""> {{ 'books-list.published_date' | translate }} {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-info pBTN" [routerLink]="['/book-details/', book.key]">Details</button>
+                    <button class="btn btn-info pBTN" [routerLink]="['/book-details/', book.key]" translate>books-list.button_details</button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-12">
                     <p class="p1">{{ book.description | slice:0:170 }}
                       <span *ngIf="book.description != undefined && book.description.length > 170">
-                        <a [routerLink]="['/book-details/', book.key]">Lire plus...</a>
+                        <a [routerLink]="['/book-details/', book.key]" translate>books-list.read_more</a>
                       </span></p>
                   <div class="card-text d-inline"  *ngFor="let tags of book.subjects | slice:0:10 ">
                     <button class="btn badge rounded-pill badge-info m-1" [routerLink]="['/books-by-subject/', tags]">
