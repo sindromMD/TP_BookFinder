@@ -2,7 +2,7 @@
   <style>
     /* Default height for small devices */
     #intro-example {
-        height: 300px;
+        height: 700px;
       }
   
       /* Height for devices larger than 992px */
@@ -24,16 +24,16 @@
           <h1 class="mb-3 h0" translate>home.title</h1><br>
           <h5 class="mb-4 " translate>home.sub_title</h5>
           
-          <div class="m-3">
+            <div class="m-3">
             <input type="text" id="inputSearch" class="form-control form-control-lg" [(ngModel)]="inputSearch" (keydown)="onKeyDown($event)"/>
           </div>
           <!-- (click)="searchBySubject()" -->
           <!-- [routerLink]="['books-by-subject',inputSearch]" -->
           <button  [routerLink]="['/books-by-subject',inputSearch]"
-            class="btn btn-light btn-lg m-2"
+            class=" btn bouton-parents btn-light btn-lg m-2"
             role="button"
             rel="nofollow"
-            target="_blank" translate>home.button_search</button>
+            target="_blank" translate>home.button_search <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i></button>
           <!-- <button
             class="btn btn-light btn-lg m-2"
             href="#"

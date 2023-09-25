@@ -27,3 +27,33 @@
   font-size: 20px;
   color: #be290e;
 }
+.bouton-parents{
+  border-radius: 10px;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 20px;
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  position: relative;
+  border: none;
+}
+.bouton-parents{
+  background: #FFC920;
+  color: black;  
+}
+
+.bouton-parents:hover{
+  background: #66500D;
+  color: rgb(255, 255, 255);
+}
+.bouton-parents:active{
+  background: #000000;
+  border: 2px solid #FFC920;
+  color: rgb(255, 255, 255);
+}
+
