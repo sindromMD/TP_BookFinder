@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Book } from 'src/models/Book';
 
 @Injectable({
@@ -9,7 +10,8 @@ export class FavorisStorageService {
 
   jsonData : string | null = null;
   favoritesList : Book[]= []
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient,
+    private toastr: ToastrService) { }
 
   async saveBookToBookShelves(pBook:Book){
     this.jsonData = localStorage.getItem("favoris");
@@ -27,9 +29,11 @@ export class FavorisStorageService {
       if(!isDuplicate) {
         this.favoritesList.push(pBook);
         localStorage.setItem("favoris", JSON.stringify(this.favoritesList));
+        this.toastr.success( pBook.title + 'a été ajouté à votre liste de favoris',`Succès`);
       }
       else{
         console.log('InfoWarning :', `Cet Livre ( ${pBook.title} ) existe déjà dans la liste de vos favoris.`)
+        this.toastr.info(`Cet Livre ( ${pBook.title} ) existe déjà dans la liste de vos favoris.`,`Info`);
       }
     }
     else {
@@ -55,6 +59,7 @@ export class FavorisStorageService {
 
         // Mise à jour de la liste dans localStorage
         localStorage.setItem("favoris", JSON.stringify(this.favoritesList));
+        this.toastr.success( pBook.title + ' a été supprimé de votre liste de favoris ! ',`Succès`);
       }
     }
   }

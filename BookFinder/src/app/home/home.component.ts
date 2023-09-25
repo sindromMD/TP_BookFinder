@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomeComponent {
   inputSearch: string = '';
-  constructor(public route: ActivatedRoute){}
+  constructor(public route: ActivatedRoute, public router : Router){}
 
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.router.navigate(['/books-by-subject', this.inputSearch]);
+    }
+  }
 }

@@ -69,7 +69,7 @@
   }
   
   .team-boxed .item img {
-    max-width:160px;
+    max-width: 100%;
   }
   
   .team-boxed .social {
@@ -87,5 +87,30 @@
   .team-boxed .social a:hover {
     opacity:1;
   }
+  .marginTop{
+    margin-top: 140px;
+}
+.divider-1{
+    background: linear-gradient(90deg,#c5452e 0%,rgba(242,242,242,0) 100% );
+    margin-right: 0px;
+    width: auto;
+    height: 2px; 
+    position: relative; 
+}
+.divider-2{
+    background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      rgba(255, 201, 32, 0) 0%, #c5452e 49.48%, rgba(255, 201, 32, 0) 100%
+    )
+    bottom 
+    left
+    no-repeat; 
+    background-size:100% 3px ;
+    margin-right: 0px;
+    width: auto;
+    height: 2px; 
+    position: relative;   
+}
 
   

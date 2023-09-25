@@ -4,8 +4,16 @@
     
   </div>
   <div class="row text-center ">
-    <h2 class="h2" translate >books-list.title</h2>
+    <div>
+      <h2 class="h2" translate >books-list.title</h2>
+      <div class="divider-2 mb-3 "></div>
+    </div>
+    
+    <div>
       <h1>{{searchResult.name}}</h1>
+    </div>
+      
+      
   </div>
   <!-- <p class="bg-info">This is a book-list component</p> -->
     <div class="row" *ngFor="let book of searchResult?.books">
@@ -27,8 +35,8 @@
                 <div class="row">
                   <div class="col-10">
                     <a class="card-title h4" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
-                <p class="" translate > books-list.author <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
-                <p class=""> {{ 'books-list.published_date' | translate }} {{book.publishDate}}</p>
+                <p class="p1" translate > books-list.author <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
+                <p class="p1"> {{ 'books-list.published_date' | translate }} {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
                     <button class="btn btn-info pBTN" [routerLink]="['/book-details/', book.key]" translate>books-list.button_details</button>
@@ -53,5 +61,6 @@
         </div>
   
       </div>
-      <div class="col-"></div>
+      <div class="col-2"></div>
     </div>
+    <div class="row margeEnd"></div>

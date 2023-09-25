@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { AboutComponent } from './about/about.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +22,20 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     BookDetailsComponent,
     AuthorDetailsComponent,
     HomeComponent,
-    FavoriteBooksComponent
+    FavoriteBooksComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -38,6 +47,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "home", component: HomeComponent},
       {path: "favorite-books", component : FavoriteBooksComponent},
+      {path: "about", component : AboutComponent},
       {path: "books-by-subject/:subject", component : BooksListComponent},
       {path: "book-details/:keyWork", component : BookDetailsComponent},
       {path: "author-details/:keyAuthor", component : AuthorDetailsComponent}

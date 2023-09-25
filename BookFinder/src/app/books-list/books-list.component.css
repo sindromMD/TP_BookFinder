@@ -16,6 +16,32 @@ h1 {
     line-height: 44px;
     color: #242222;
 }
+a.h4 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+}
 header{
     margin-bottom :100px;
+}
+.margeEnd{
+    margin-top: 100px;
+}
+.divider-2{
+    background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      rgba(255, 201, 32, 0) 0%, #c5452e 49.48%, rgba(255, 201, 32, 0) 100%
+    )
+    bottom 
+    left
+    no-repeat; 
+    background-size:100% 3px ;
+    margin-right: 0px;
+    width: auto;
+    height: 2px; 
+    position: relative;   
 }

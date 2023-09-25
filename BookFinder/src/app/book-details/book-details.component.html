@@ -17,7 +17,7 @@
                 />
                 <br>
                 <div>
-                    <button class="btn btn-info" (click)="addToFavorites()" translate> book-details.button_favorits </button>
+                    <button class="btn btn-info" (click)="addToFavorites()" translate> book-details.button_favorits &nbsp;<i class="fa-solid fa-heart fa-sm"></i></button>
                 </div>
               </div>
               <div class="col-12 col-md-8 col-lg-8">
@@ -41,8 +41,8 @@
                   </div>
                   <div class="row pb-4">
                     <div class="col-12 p1">
-                        <p class="p2 card-text" translate>
-                            {{ searchResult.nbPages }} book-details.pages
+                        <p class="p2 card-text" >
+                            {{ searchResult.nbPages }} {{ 'book-details.pages' | translate }}
                           </p>
                     </div>
                   </div>
@@ -65,7 +65,7 @@
                               </tr>
                                  <tr>
                                 <th scope="row" translate> book-details.format </th>
-                                <td translate>{{searchResult.nbPages}} book-details.pages </td>
+                                <td >{{searchResult.nbPages}} {{ 'book-details.pages' | translate }}</td>
                               </tr>
                               <tr>
                                 <th scope="row">ISBN</th>
