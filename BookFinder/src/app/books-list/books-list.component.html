@@ -4,8 +4,16 @@
     
   </div>
   <div class="row text-center ">
-    <h2 class="h2" translate >books-list.title</h2>
+    <div>
+      <h2 class="h2" translate >books-list.title</h2>
+      <div class="divider-2 mb-3 "></div>
+    </div>
+    
+    <div>
       <h1>{{searchResult.name}}</h1>
+    </div>
+      
+      
   </div>
   <!-- <p class="bg-info">This is a book-list component</p> -->
     <div class="row" *ngFor="let book of searchResult?.books">
@@ -53,5 +61,6 @@
         </div>
   
       </div>
-      <div class="col-"></div>
+      <div class="col-2"></div>
     </div>
+    <div class="row margeEnd"></div>

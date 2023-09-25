@@ -2,6 +2,7 @@
     "app": {
       "button_home":"Home",
       "button_favoris":"Favorites",
+      "button_about" : "About",
       "button_lang":"Français",
       "button_search":"Search for a book ... "
     },
@@ -46,5 +47,28 @@
         "author":"Author",
         "title_related":"Related books ( written / contributed )"
         
+      },
+      
+      "about": {
+          "title":"ABOUT THE PROJECT",
+          "info_1":"This project was realized by",
+          "info_2":", as part of a : ",
+          "info_3":"Service-oriented web programming",
+          "info_4":"(CW6EM-06139 AEC Web Development) from CÉGEP Édoouard-Montpetit.",
+          "sub_title1":"API-BASED",
+          "nom_teacher":"Teacher's name :",
+          "objective1" : "Learning objecives",
+          "obj_li_1" : "Develop a client application using Web services", 
+          "obj_li_2": "Develop a Web application providing additional data and functionality to a client application.",
+          "obj_li_3" : "Configuring and documenting the project",
+          "sub_title2" : "Project structure :",
+          "p_1" : "The project in question uses an open source API",
+          "p_2" : ", which aims to retrieve information on different books.",
+          "struc_li_1" :"Generate book lists by subject. (books-list)",
+          "struc_li_2" :"Provide additional details on the selected book (book-details).",
+          "struc_li_3" :"Provide author details (author-details).",
+          "struc_li_4" :"Generate lists of books written or contributed to (author-details).",
+          "struc_li_5" :"Add/delete a book to/from the list of favorite books (localStorage : favorite-books )",
+          "struc_li_6" :"Internalization ( bottom left corner )"
       }
   }

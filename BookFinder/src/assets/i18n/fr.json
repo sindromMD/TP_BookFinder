@@ -2,6 +2,7 @@
     "app": {
       "button_home":"Accueil",
       "button_favoris":"Favoris",
+      "button_about" : "À propos",
       "button_lang":"English",
       "button_search":"Rechercher un livre ... "
     },
@@ -47,5 +48,27 @@
         "author":"Auteur",
         "title_related":"Livres connexes (écrits / contribué)"
         
+      },
+      "about": {
+          "title":"À PROPOS DU PROJET",
+          "info_1":"Ce projet a été réalisé par",
+          "info_2":", dans le cadre d'un cours de : ",
+          "info_3":"Programmation web orientée services",
+          "info_4":"(CW6EM-06139 AEC Développement Web) du CÉGEP Édoouard-Montpetit. ",
+          "sub_title1":"BASÉ SUR L'API",
+          "nom_teacher":"Nom de l’enseignant : ",
+          "objective1" : "Objectifs d'apprentissage",
+          "obj_li_1" : "Développer une application cliente en utilisant des services Web ",
+          "obj_li_2" : "Développer une application Web fournissant des données et des fonctionnalités supplémentaires à une application cliente.",
+          "obj_li_3" : "Configurer et documenter le projet",
+          "sub_title2" : "Structure du projet :",
+          "p_1" : "Le projet en question utilise une API open source",
+          "p_2" : ", qui vise à récupérer des informations sur différents livres.",
+          "struc_li_1" :"Générer des listes de livres par sujet. (books-list)",
+          "struc_li_2" :"Fournir des détails supplémentaires sur le livre sélectionné (book-details).",
+          "struc_li_3" :"Fournir des détails sur l'auteur (author-details).",
+          "struc_li_4" :"Générer des listes de livres écrits ou auxquels on a contribué (author-details).",
+          "struc_li_5" :"Ajouter/supprimer un livre à/de la liste des livres favoris (localStorage : favorite-books )",
+          "struc_li_6" :"Internalisation ( dans le coin inférieur gauche  )"
       }
   }

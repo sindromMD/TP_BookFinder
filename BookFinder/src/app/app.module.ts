@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { FavoriteBooksComponent } from './favorite-books/favorite-books.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     BookDetailsComponent,
     AuthorDetailsComponent,
     HomeComponent,
-    FavoriteBooksComponent
+    FavoriteBooksComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       {path: "", redirectTo : "/home", pathMatch:"full"},
       {path: "home", component: HomeComponent},
       {path: "favorite-books", component : FavoriteBooksComponent},
+      {path: "about", component : AboutComponent},
       {path: "books-by-subject/:subject", component : BooksListComponent},
       {path: "book-details/:keyWork", component : BookDetailsComponent},
       {path: "author-details/:keyAuthor", component : AuthorDetailsComponent}

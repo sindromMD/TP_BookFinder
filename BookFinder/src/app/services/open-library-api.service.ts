@@ -18,7 +18,7 @@ export class OpenLibraryAPIService {
   
 // méthode qui forme une liste de livres en fonction du sujet recherché
   async getBySubject(pSubject:string):Promise<any>{
-    let result = await lastValueFrom(this.http.get<any>(`${baseURL}/search.json?q=subject%3A${pSubject}&mode=everything&sort=rating&language=fre&limit=10`));
+    let result = await lastValueFrom(this.http.get<any>(`${baseURL}/search.json?q=subject%3A${pSubject}&mode=everything&sort=rating&language=fre&limit=20`));
     console.log('1)getBySubject result',result);
     this.listBooksBySubject = new SubjectBook();
     this.listBooksBySubject.name = pSubject;

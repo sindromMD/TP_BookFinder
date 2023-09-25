@@ -19,3 +19,21 @@ h1 {
 header{
     margin-bottom :100px;
 }
+.margeEnd{
+    margin-top: 100px;
+}
+.divider-2{
+    background: /* gradient can be an image */
+    linear-gradient(
+      to left, 
+      rgba(255, 201, 32, 0) 0%, #c5452e 49.48%, rgba(255, 201, 32, 0) 100%
+    )
+    bottom 
+    left
+    no-repeat; 
+    background-size:100% 3px ;
+    margin-right: 0px;
+    width: auto;
+    height: 2px; 
+    position: relative;   
+}
