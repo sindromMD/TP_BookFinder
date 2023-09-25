@@ -13,7 +13,8 @@ import { FavoriteBooksComponent } from './favorite-books/favorite-books.componen
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AboutComponent } from './about/about.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,12 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
