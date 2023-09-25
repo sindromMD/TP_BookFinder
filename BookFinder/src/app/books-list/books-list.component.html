@@ -35,8 +35,8 @@
                 <div class="row">
                   <div class="col-10">
                     <a class="card-title h4" [routerLink]="['/book-details/', book.key]">{{ book.title }}</a>
-                <p class="" translate > books-list.author <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
-                <p class=""> {{ 'books-list.published_date' | translate }} {{book.publishDate}}</p>
+                <p class="p1" translate > books-list.author <a [routerLink]="['/author-details/', book.authorKey]"> {{book.authorName}}</a></p> 
+                <p class="p1"> {{ 'books-list.published_date' | translate }} {{book.publishDate}}</p>
                   </div>
                   <div class="col-2">
                     <button class="btn btn-info pBTN" [routerLink]="['/book-details/', book.key]" translate>books-list.button_details</button>

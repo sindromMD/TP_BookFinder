@@ -27,9 +27,11 @@ export class FavorisStorageService {
       if(!isDuplicate) {
         this.favoritesList.push(pBook);
         localStorage.setItem("favoris", JSON.stringify(this.favoritesList));
+        alert(pBook.title + 'a été ajouté à votre liste de favoris');
       }
       else{
         console.log('InfoWarning :', `Cet Livre ( ${pBook.title} ) existe déjà dans la liste de vos favoris.`)
+        alert(`Cet Livre ( ${pBook.title} ) existe déjà dans la liste de vos favoris.`);
       }
     }
     else {

@@ -16,6 +16,14 @@ h1 {
     line-height: 44px;
     color: #242222;
 }
+a.h4 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+}
 header{
     margin-bottom :100px;
 }

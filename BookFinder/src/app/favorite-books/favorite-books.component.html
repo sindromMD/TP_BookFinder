@@ -36,16 +36,20 @@
                                         {{book.title}}
                                         </a>
                                    </td>
-                                   <td>{{book.authorName}}</td>
+                                   <td>
+                                    <a [routerLink]="['/author-details/', book.authorKey]">
+                                        {{book.authorName}}
+                                    </a>
+                                    </td>
                                    <td class="text-start">{{ book.description | slice:0:250}}
                                     <span *ngIf="book.description != undefined && book.description.length > 250">
                                         <a [routerLink]="['/book-details/', book.key]">Lire plus...</a>
                                       </span>
                                    </td>
-                                   <td>
+                                   <td class="td_special">
                                       <!-- Button trigger modal -->
-                                        <button translate type="button" class="btn btn-danger" (click)="deletefromFavoris(book)" >
-                                            favorite-books.button_delete
+                                        <button translate type="button" class="btn btn-danger " (click)="deletefromFavoris(book)" >
+                                            favorite-books.button_delete &nbsp; <i class="fa-solid fa-trash fa-sm"></i>
                                             </button>
                                    </td>
                                 </tr>                     

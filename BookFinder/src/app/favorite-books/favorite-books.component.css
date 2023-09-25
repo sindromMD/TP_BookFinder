@@ -34,6 +34,9 @@ thead {
 .th_special{
     width: 300px;
 }
+.td_special{
+    width: 180px;
+}
 .p1 {
     font-family: 'Libre Baskerville', serif;
     font-style: normal;

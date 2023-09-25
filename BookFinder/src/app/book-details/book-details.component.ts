@@ -30,7 +30,6 @@ export class BookDetailsComponent implements OnInit {
     });
   }
   async addToFavorites():Promise<void>{
-    await this.favorisStorageService.saveBookToBookShelves(this.searchResult)
+    await this.favorisStorageService.saveBookToBookShelves(this.searchResult);
   }
-  
 }
